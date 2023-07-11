@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KosDataController;
+use App\Http\Controllers\PemilikController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,4 +31,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('/data-kos', KosDataController::class);
 });
 
+
+Route::get('/pemilik', [PemilikController::class, 'index'])->name('pemilik.index');
 require __DIR__ . '/auth.php';
