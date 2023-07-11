@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\KosData;
 use Illuminate\Http\Request;
 
 class KosDataController extends Controller
@@ -13,7 +14,8 @@ class KosDataController extends Controller
      */
     public function index()
     {
-        //
+        $data = KosData::all();
+        dd($data);
     }
 
     /**
