@@ -21,18 +21,18 @@
         <ul class="menu">
             <li class="sidebar-title">Menu</li>
             
-            {{-- <li class="sidebar-item {{ Request::is('dashboard*')?'active':'' }}">
-                <a href="{{route('dashboard')}}" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>  
             <li class="sidebar-item {{ Request::is('data-kos*')?'active':'' }}">
                 <a href="{{route('data-kos.index')}}" class='sidebar-link'>
                     <i class="bi bi-card-list"></i>
                     <span>Data Kos</span>
                 </a>
             </li>
+            {{-- <li class="sidebar-item {{ Request::is('dashboard*')?'active':'' }}">
+                <a href="{{route('dashboard')}}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>  
             <li class="sidebar-item {{ Request::is('example*')?'active':'' }}">
                 <a href="{{route('example')}}" class='sidebar-link'>
                     <i class="bi bi-card-list"></i>
