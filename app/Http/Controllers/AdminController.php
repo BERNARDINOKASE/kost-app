@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class DashboardController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view();
+        $data = User::all();
+        return view('admin.user.index');
     }
 
     /**
@@ -81,23 +82,5 @@ class DashboardController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-
-    //logut fitur
-    public function logout(Request $request)
-    {
-        Auth::guard('web')->logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
-        $notification = array(
-            'message' => 'Logout Berhasil',
-            'alert-type' => 'success'
-        );
-
-        return redirect('/')->with($notification);
     }
 }

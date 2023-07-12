@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 
-class DashboardController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +18,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view();
+        $data = User::all();
+        return view('admin.user.index', compact('data'));
     }
 
     /**
@@ -35,7 +40,20 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'password' => ['required'],
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        event(new Registered($user));
+        return to_route('data-user.index')->with('success', 'Akun Berhasil Dibuat');
     }
 
     /**
@@ -84,20 +102,4 @@ class DashboardController extends Controller
     }
 
 
-    //logut fitur
-    public function logout(Request $request)
-    {
-        Auth::guard('web')->logout();
-
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
-
-        $notification = array(
-            'message' => 'Logout Berhasil',
-            'alert-type' => 'success'
-        );
-
-        return redirect('/')->with($notification);
-    }
 }

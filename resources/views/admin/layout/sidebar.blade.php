@@ -33,6 +33,12 @@
                     <span>Data Kos</span>
                 </a>
             </li> 
+            <li class="sidebar-item {{ Request::is('data-user*')?'active':'' }}">
+                <a href="{{route('data-user.index')}}" class='sidebar-link'>
+                    <i class="bi bi-card-list"></i>
+                    <span>Data User</span>
+                </a>
+            </li> 
             
             {{-- <li class="sidebar-item {{ Request::is('example*')?'active':'' }}">
                 <a href="{{route('example')}}" class='sidebar-link'>

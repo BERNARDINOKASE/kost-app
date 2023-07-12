@@ -1,8 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KosDataController;
 use App\Http\Controllers\PemilikController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,8 +32,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('/data-kos', KosDataController::class);
+    Route::resource('/data-user', AdminController::class);
+Route::get('/', [DashboardController::class, 'logout'])->name('logout');
 });
 
 
 Route::get('/pemilik', [PemilikController::class, 'index'])->name('pemilik.index');
+// Route::get('/user', [UserController::class, 'index'])->name('user.index');
+
 require __DIR__ . '/auth.php';
