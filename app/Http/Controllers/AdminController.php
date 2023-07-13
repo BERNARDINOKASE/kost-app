@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 
 class AdminController extends Controller
 {
@@ -15,7 +17,7 @@ class AdminController extends Controller
     public function index()
     {
         $data = User::all();
-        return view('admin.user.index');
+        return view('admin.user.index', compact('data'));
     }
 
     /**
@@ -36,7 +38,19 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:' . User::class],
+            'password' => ['required'],
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        event(new Registered($user));
+        return to_route('data-user.index')->with('success', 'Akun Berhasil Dibuat');
     }
 
     /**

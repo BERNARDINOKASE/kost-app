@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('/data-kos', KosDataController::class);
     Route::resource('/data-user', AdminController::class);
-Route::get('/', [DashboardController::class, 'logout'])->name('logout');
+    Route::get('/', [DashboardController::class, 'logout'])->name('logout.dashboard');
 });
 
 
