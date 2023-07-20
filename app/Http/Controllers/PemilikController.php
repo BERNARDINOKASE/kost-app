@@ -23,7 +23,7 @@ class PemilikController extends Controller
      */
     public function create()
     {
-        //
+        return view('pemilik.dashboard.create');
     }
 
     /**

@@ -1,6 +1,7 @@
 @extends('pemilik.layout.master')
 
 @section('title', 'Dashboard Pemilik')
+@section('headertitle', 'Selamat datang di halaman pemilik kos')
 
 @section('content')
     <section class="row">
@@ -28,7 +29,7 @@
                         {{-- <h4>belum ada kos?</h4> --}}
                         <div class="name d-grid gap-2 col-12">
                             {{-- <h5 class="font-bold">Kelola kos anda</h5> --}}
-                            <a href="" class="text-muted mb-0 btn btn-outline btn-xl text-start fs-5"><i class="fa-solid fa-circle-plus m-3"></i>Tambah kos</a>
+                            <a href="{{route('pemilik.create')}}" class="text-muted mb-0 btn btn-outline btn-xl text-start fs-5"><i class="fa-solid fa-circle-plus m-3"></i>Tambah kos</a>
                         </div>
                     </div>
                 </div>

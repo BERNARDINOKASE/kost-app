@@ -10,6 +10,7 @@ class KosData extends Model
     use HasFactory;
     protected $guard = [];
     protected $fillable = [
+        'user_id',
         'nama_kos',
         'tipe_kamar',
         'deskripsi',
@@ -35,8 +36,8 @@ class KosData extends Model
     ];
 
 
-    // public function user()
-    // {
-    //     return $this->belongsTo(User::class,);
-    // }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

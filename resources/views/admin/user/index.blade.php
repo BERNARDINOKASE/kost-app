@@ -31,7 +31,7 @@
                                                     <div class="row">
                                                         <div class="col-md-12 col-12">
                                                             <div class="form-group">
-                                                                <label for="nama_kos">Nama</label>
+                                                                <label for="nama_kos">Nama Lengkap</label>
                                                                 <input type="text" id="name" name="name" class="form-control">
                                                             </div>
                                                         </div>

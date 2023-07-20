@@ -31,13 +31,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::resource('/data-kos', KosDataController::class);
     Route::resource('/data-user', AdminController::class);
-    Route::get('/', [DashboardController::class, 'logout'])->name('logout.dashboard');
+    Route::resource('/data-kos', KosDataController::class);
+    Route::get('/logout', [DashboardController::class, 'logout'])->name('logout.dashboard');
 });
 
 
 Route::get('/pemilik', [PemilikController::class, 'index'])->name('pemilik.index');
+Route::resource('/pemilik', PemilikController::class);
 // Route::get('/user', [UserController::class, 'index'])->name('user.index');
 
 require __DIR__ . '/auth.php';

@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('kos_data', function (Blueprint $table) {
             $table->id();
             $table->string('nama_kos');
+            $table->unsignedBigInteger('user_id')->required();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->tinyInteger('tipe_kamar')->comment('1=>putra, 2=>putri, 3=>campur');
             $table->text('deskripsi');
             $table->string('nama_pengelola')->nullable();

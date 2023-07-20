@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\KosData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
 
@@ -103,6 +104,7 @@ class KosDataController extends Controller
 
         if ($request->hasFile('foto_bgnan_tampak_depan', 'foto_bgnan_dalam', 'foto_bgnan_dari_jalan', 'foto_km_depan', 'foto_km_dalam', 'foto_km_mandi') == null) {
             $data = [
+                'user_id' => Auth::id(),
                 'nama_kos' => $request->nama_kos,
                 'tipe_kamar' => $request->tipe_kamar,
                 'deskripsi' => $request->deskripsi,
@@ -145,6 +147,7 @@ class KosDataController extends Controller
         $request->foto_km_mandi->move(public_path('storage/galeri_kos'), $ft_km_mdi);
 
         $data = [
+            'user_id' => Auth::id(),
             'nama_kos' => $request->nama_kos,
             'tipe_kamar' => $request->tipe_kamar,
             'deskripsi' => $request->deskripsi,

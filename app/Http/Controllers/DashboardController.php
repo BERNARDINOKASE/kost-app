@@ -14,7 +14,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view();
+        //
     }
 
     /**
@@ -98,6 +98,6 @@ class DashboardController extends Controller
             'alert-type' => 'success'
         );
 
-        return redirect('/')->with($notification);
+        return redirect('/login')->with($notification);
     }
 }
