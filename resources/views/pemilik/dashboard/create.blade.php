@@ -11,7 +11,8 @@
             <div class="card">
                 <div class="card-content">
                     <div class="card-body">
-                        <form class="form">
+                        <form class="form" action="{{route('pemilik.store')}}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6 col-12">
                                     <div class="form-group">
