@@ -21,19 +21,19 @@
         <ul class="menu">
             <li class="sidebar-title">Menu</li>
             
-            <li class="sidebar-item {{ Request::is('dashboard*')?'active':'' }}">
+            <li class="sidebar-item {{ Request::routeIs('dashboard*')?'active':'' }}">
                 <a href="{{route('dashboard')}}" class='sidebar-link'>
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
                 </a>
             </li>  
-            <li class="sidebar-item {{ Request::is('data-kos*')?'active':'' }}">
+            <li class="sidebar-item {{ Request::routeIs('data-kos.index*')?'active':'' }}">
                 <a href="{{route('data-kos.index')}}" class='sidebar-link'>
                     <i class="bi bi-card-list"></i>
                     <span>Data Kos</span>
                 </a>
             </li> 
-            <li class="sidebar-item {{ Request::is('data-user*')?'active':'' }}">
+            <li class="sidebar-item {{ Request::routeIs('data-user.index*')?'active':'' }}">
                 <a href="{{route('data-user.index')}}" class='sidebar-link'>
                     <i class="bi bi-card-list"></i>
                     <span>Data User</span>

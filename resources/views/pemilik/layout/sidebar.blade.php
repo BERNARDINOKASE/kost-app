@@ -21,30 +21,30 @@
         <ul class="menu">
             <li class="sidebar-title">Menu</li>
             
-            <li class="sidebar-item {{ Request::is('pemilik*')?'active':'' }}">
+            <li class="sidebar-item {{ Request::routeIs('pemilik.index*')?'active':'' }}">
                 <a href="{{route('pemilik.index')}}" class='sidebar-link'>
-                    <i class="fa-solid fa-house"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
                     <span>Home</span>
                 </a>
             </li>  
-            <li class="sidebar-item {{ Request::is('*')?'active':'' }}">
-                <a href="" class='sidebar-link'>
-                    <i class="fa-solid fa-door-open"></i>
+            <li class="sidebar-item {{ Request::routeIs('pemilik.lihatkos')?'active':'' }}">
+                <a href="{{route('pemilik.lihatkos')}}" class='sidebar-link'>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M320 32c0-9.9-4.5-19.2-12.3-25.2S289.8-1.4 280.2 1l-179.9 45C79 51.3 64 70.5 64 92.5V448H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H96 288h32V480 32zM256 256c0 17.7-10.7 32-24 32s-24-14.3-24-32s10.7-32 24-32s24 14.3 24 32zm96-128h96V480c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H512V128c0-35.3-28.7-64-64-64H352v64z"/></svg>
                     <span>Kos saya</span>
-                </a>
-            </li>  
-            <li class="sidebar-item {{ Request::is('*')?'active':'' }}">
-                <a href="" class='sidebar-link'>
-                    <i class="fa-solid fa-chart-line"></i>
-                    <span>Statistik</span>
                 </a>
             </li>  
             {{-- <li class="sidebar-item {{ Request::is('*')?'active':'' }}">
                 <a href="" class='sidebar-link'>
-                    <i class="bi bi-grid-fill"></i>
-                    <span>Akun</span>
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Statistik</span>
                 </a>
             </li>   --}}
+            <li class="sidebar-item {{ Request::routeIs('pemilik.akunsaya*')?'active':'' }}">
+                <a href="{{route('pemilik.akunsaya')}}" class='sidebar-link'>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                    <span>Akun saya</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

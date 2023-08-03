@@ -170,8 +170,8 @@ class KosDataController extends Controller
             'harga' => $request->harga,
         ];
 
-        $create = KosData::create($data);
-        return to_route('data-kos.index', compact('create'))->with('success', 'Data berhasil di simpan');
+        KosData::create($data);
+        return to_route('data-kos.index')->with('success', 'Data berhasil di simpan');
     }
 
     /**
