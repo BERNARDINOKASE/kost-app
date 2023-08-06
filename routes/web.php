@@ -5,6 +5,7 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KosDataController;
 use App\Http\Controllers\PemilikController;
+use App\Http\Controllers\PencariController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -24,8 +25,16 @@ use Illuminate\Support\Facades\Route;
 //     return view('app.layout.content');
 // });
 
+
+//pencari kos routes
+Route::get('/pencari-kos/login', [PencariController::class, 'formlogin'])->name('pencari.login');
+Route::post('/pencari-kos/login/request', [PencariController::class, 'login'])->name('pencari.login.request');
+Route::get('/pencari-kos/registrasi', [PencariController::class, 'formregistration'])->name('pencari.registration');
+
+
 Route::get('/', [AppController::class, 'index']);
 Route::get('/kos/{id}', [AppController::class, 'show'])->name('app.show');
+Route::get('/kos/{id}/sewa', [AppController::class, 'ajukansewa'])->name('app.ajukansewa');
 
 Route::get('/dashboard', function () {
     return view('admin.layout.content');

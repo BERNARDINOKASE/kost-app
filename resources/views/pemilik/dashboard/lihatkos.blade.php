@@ -24,7 +24,7 @@
                         @if ($item->foto_bgnan_tampak_depan != null)
                             <img class="card-img-top img-fluid" src="{{asset('storage/galeri_kos/'. $item->foto_bgnan_tampak_depan)}}" style="height: 20rem" />
                         @else
-                        <img class="card-img-top img-fluid" src="{{asset('assets/')}}/images/samples/home.jpeg" alt="Card image cap" id="file-2" />
+                            <img class="card-img-top img-fluid" src="{{asset('assets/')}}/images/samples/home.jpeg" alt="Card image cap" id="file-2" />
                         @endif
                         <div class="card-body">
                             <h4 class="card-title">{{$item->nama_kos}}</h4>

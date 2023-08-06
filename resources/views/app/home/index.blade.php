@@ -5,7 +5,7 @@
 
 @section('content')
 <section class="row">
-    <div class="col-12 col-lg-12">
+    <div class="col-md-12 col-sm-12">
         {{-- <div class="row">
             <div class="col-6 col-lg-3 col-md-6">
                 <div class="card">
@@ -81,8 +81,11 @@
                 <div class="col-md-4 col-sm-12">
                     <div class="card">
                         <a class="card-content"  href="{{route('app.show', $item->id)}}">
-                            <img class="card-img-top img-fluid" src="assets/images/samples/origami.jpg" alt="Card image cap"
-                                style="height: 20rem" />
+                            @if ( $item->foto_bgnan_tampak_depan == null)    
+                                <img class="card-img-top img-fluid" src="{{asset('assets/')}}/images/samples/home.jpeg" alt="Card image cap" id="file-2" />
+                            @else
+                                <img class="card-img-top img-fluid" src="{{asset('storage/galeri_kos/'. $item->foto_bgnan_tampak_depan)}}" alt="Card image cap" style="height: 20rem" />
+                            @endif
                             <div class="card-body">
                                 <h4 class="card-title fs-3">{{$item->nama_kos }}</h4>
                                 <p class="card-text fs-4 ms-4">{{$item->alamat}}</p>

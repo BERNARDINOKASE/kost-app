@@ -18,4 +18,10 @@ class AppController extends Controller
         $data = KosData::where('id', $id)->first();
         return view('app.home.show', compact('data'));
     }
+    public function ajukansewa($id)
+    {
+        $data = KosData::where('id', $id)->first();
+        // dd($data);
+        return view('app.home.ajukansewa', compact('data'));
+    }
 }
