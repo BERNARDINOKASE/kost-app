@@ -1,4 +1,4 @@
-@extends('pencarikos.auth.layout.master')
+@extends('auth.authapp.master')
 
 @section('content')
 <section class="row d-flex justify-content-center vh-100 align-items-center">
@@ -6,7 +6,7 @@
         <div class="card">
 
             <div class="card-header text-center fs-2 fw-bold">
-                Login Form Pencari Kos
+                Login Form
                 @if ($errors->any())
                     <div class="alert alert-danger align-items-center">
                         <ul>
@@ -22,7 +22,7 @@
             </div>
             <div class="card-content">
                 <div class="card-body">
-                    <form class="form" action="{{route('pencari.login.request')}}" method="POST" >
+                    <form class="form" action="{{route('admin.login')}}" method="POST" >
                         @csrf
                         <div class="col-md-12">
                             <div class="form-group has-icon-left">
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                         <div class="col-12 d-flex justify-content-end">
-                            <a href="{{route('pencari.registration')}}" class="btn btn-light-secondary me-1 mb-1">Belum Punya Akun?</a>
+                            <a href="" class="btn btn-light-secondary me-1 mb-1">Belum Punya Akun?</a>
                             <button type="submit" class="btn btn-primary me-1 mb-1">Login</button>
                         </div>
                     </form>

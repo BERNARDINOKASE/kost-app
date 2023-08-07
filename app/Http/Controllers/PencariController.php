@@ -35,7 +35,7 @@ class PencariController extends Controller
         if (Auth::attempt($login)) {
             return 'berhasil login';
         } else {
-            return to_route('pencari.login')->withErrors('Login Gagal');
+            return to_route('pencari.login')->withErrors('Username atau password anda salah');
         }
     }
 }
