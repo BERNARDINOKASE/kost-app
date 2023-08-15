@@ -16,6 +16,10 @@ return new class extends Migration
         Schema::create('transaksi_sewas', function (Blueprint $table) {
             $table->id();
             $table->string('nama_penyewa');
+            $table->unsignedBigInteger('user_id')->required();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('kos_id')->required();
+            $table->foreign('kos_id')->references('id')->on('kos_data');
             $table->string('jenis_kelamin');
             $table->string('pekerjaan');
             $table->date('tanggal_lahir');
@@ -23,6 +27,9 @@ return new class extends Migration
             $table->string('status');
             $table->string('no_hp');
             $table->string('asal_kota');
+            $table->string('no_rek');
+            $table->string('nama_rek');
+            $table->string('jumlah_tf');
             $table->timestamps();
         });
     }

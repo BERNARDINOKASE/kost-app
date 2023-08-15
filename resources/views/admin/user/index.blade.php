@@ -42,6 +42,17 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-12 col-12">
+                                                            <label>Role</label>
+                                                            <div class="form-group">
+                                                                <select name="role" class="form-select" id="basicSelect">
+                                                                    <option selected >--role--</option>
+                                                                    <option value="admin">Admin</option>
+                                                                    <option value="pemilik">Pemilik</option>
+                                                                    <option value="pencari">Pencari</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 col-12">
                                                             <div class="form-group">
                                                                 <label for="nama_kos">Password</label>
                                                                 <input type="password" id="password" name="password" class="form-control">
@@ -73,6 +84,7 @@
                         <th>Id</th>
                         <th>Nama</th>
                         <th>Email</th>
+                        <th>Role</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -82,6 +94,7 @@
                             <td>{{$item->id}}</td>
                             <td>{{$item->name}}</td>
                             <td>{{$item->email}}</td>
+                            <td>{{$item->role}}</td>
                             <td class="d-lg-inline-flex">
                                 <a href="" class="btn btn-outline-warning btn-sm m-1 "><i class="bi bi-pencil"></i></a>
                                 <form action="}" method="POST">

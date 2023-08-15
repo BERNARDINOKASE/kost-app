@@ -35,6 +35,10 @@ class KosData extends Model
         'updated_at'
     ];
 
+    public function transaksisewa()
+    {
+        return $this->hasMany(TransaksiSewa::class);
+    }
 
     public function user()
     {

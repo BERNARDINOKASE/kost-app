@@ -134,7 +134,11 @@
                             @endif
                 </div>
                 <div class="card-footer">
-                    <a href="{{route('app.ajukansewa', $data->id)}}" class="btn btn-outline-primary">Ajukan Sewa</a>
+                    @if (Auth::check())
+                        <a href="{{route('app.ajukansewa', $data->id)}}" class="btn btn-outline-primary">Ajukan Sewa</a>
+                    @else
+                        <a href="{{route('login')}}" class="btn btn-primary me-1 mb-1"> Ajukan Sewa</a>
+                    @endif
                 </div>
             </div>
         </div>

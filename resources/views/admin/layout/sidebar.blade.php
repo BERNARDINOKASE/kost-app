@@ -40,12 +40,20 @@
                 </a>
             </li> 
             
-            {{-- <li class="sidebar-item {{ Request::is('example*')?'active':'' }}">
-                <a href="{{route('example')}}" class='sidebar-link'>
+            <li class="sidebar-item {{ Request::is('')?'active':'' }}">
+                <a href="{{}}" class='sidebar-link'>
                     <i class="bi bi-card-list"></i>
-                    <span>Example</span>
+                    <span>Data Transaksi Sewa</span>
                 </a>
             </li>
+
+            {{-- <li class="sidebar-item {{ Request::is('')?'active':'' }}">
+                <a href="{{}}" class='sidebar-link'>
+                    <i class="bi bi-card-list"></i>
+                    <span>Data Transaksi Sewa</span>
+                </a>
+            </li>
+            
             <li class="sidebar-item {{ Request::is('example-data*')?'active':'' }}">
                 <a href="{{route('example-data.index')}}" class='sidebar-link'>
                     <i class="bi bi-card-list"></i>

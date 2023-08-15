@@ -6,7 +6,7 @@
         <div class="card">
 
             <div class="card-header text-center fs-2 fw-bold">
-                Login Form
+                Register Form
                 @if ($errors->any())
                     <div class="alert alert-danger align-items-center">
                         <ul>
@@ -22,8 +22,18 @@
             </div>
             <div class="card-content">
                 <div class="card-body">
-                    <form class="form" action="{{route('admin.login')}}" method="POST" >
+                    <form class="form" action="{{route('app.register')}}" method="POST" >
                         @csrf
+                        <div class="col-md-12">
+                            <div class="form-group has-icon-left">
+                                <div class="position-relative">
+                                    <input type="text" value="{{Session::get('email')}}" class="form-control" placeholder="Nama Lengkap" id="name" name="name">
+                                    <div class="form-control-icon">
+                                        <i class="bi bi-person"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-12">
                             <div class="form-group has-icon-left">
                                 <div class="position-relative">
@@ -38,6 +48,16 @@
                             <div class="form-group has-icon-left">
                                 <div class="position-relative">
                                     <input type="password" class="form-control" placeholder="Password" id="password" name="password">
+                                    <div class="form-control-icon">
+                                        <i class="bi bi-lock"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group has-icon-left">
+                                <div class="position-relative">
+                                    <input type="password" class="form-control" placeholder="Konfirmasi Password" id="password_confirmation" name="password_confirmation">
                                     <div class="form-control-icon">
                                         <i class="bi bi-lock"></i>
                                     </div>

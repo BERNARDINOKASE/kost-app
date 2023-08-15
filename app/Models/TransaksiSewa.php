@@ -11,6 +11,8 @@ class TransaksiSewa extends Model
 
     protected $guarded = [];
     protected $fillable = [
+        'user_id',
+        'kos_id',
         'id',
         'nama_penyewa',
         'jenis_kelamin',
@@ -20,7 +22,15 @@ class TransaksiSewa extends Model
         'status',
         'no_hp',
         'asal_kota',
+        'no_rek',
+        'nama_rek',
+        'jumlah_tf',
         'created_at',
         'updated_at'
     ];
+
+    public function kos_data()
+    {
+        return $this->belongsTo(KosData::class, 'kos_id', 'id');
+    }
 }
